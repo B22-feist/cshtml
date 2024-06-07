@@ -1,0 +1,30 @@
+@page
+<!DOCTYPE html>
+@model MyWebApp.Pages.MyPageModel
+@{
+    ViewData["Title"] = "My Razor Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <p>This is a Razor page embedded into an HTML web page.</p>
+
+    <p>The current time is: @DateTime.Now</p>
+
+    <form method="post">
+        <input type="text" name="message" />
+        <button type="submit">Submit</button>
+    </form>
+
+    @if (Request.Method == "POST")
+    {
+        <p>You submitted: @Request.Form["message"]</p>
+    }
+</body>
+</html>
